@@ -7,10 +7,8 @@
     xmlns:views="clr-namespace:MauiAppDataSaving.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiAppDataSaving">
-
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
-
 </Shell>
