@@ -9,7 +9,9 @@
             Text="Add Product"
             Command="{Binding AddProductCommand}" />
         <CollectionView
-            ItemsSource="{Binding Products}">
+            ItemsSource="{Binding Products}"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedProduct}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
@@ -19,5 +21,13 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Entry
+            Placeholder="Edit Product Name"
+            Text="{Binding EditedName}"
+            IsVisible="{Binding SelectedProduct, Converter={StaticResource NullToBoolConverter}}"/>
+        <Button
+            Text="Save Changes"
+            Command="{Binding SaveProductCommand}"
+            IsVisible="{Binding SelectedProduct, Converter={StaticResource NullToBoolConverter}}"/>
     </StackLayout>
 </ContentPage>
